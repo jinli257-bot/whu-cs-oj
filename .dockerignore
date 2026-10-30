@@ -1,0 +1,12 @@
+.git
+.gitignore
+.gitattributes
+__pycache__
+*.pyc
+work
+data/submissions.jsonl
+server.out.log
+server.err.log
+dist
+shots
+docs/*.png

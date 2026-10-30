@@ -1,0 +1,25 @@
+珞珈机试 OJ
+Copyright (c) 2026 jinli257-bot
+
+本仓库包含两类内容，适用不同的版权规则。
+
+一、评测系统与代码
+--------------------
+server.py、judge.py、build.py、content/、web/、tools/ 等由本项目编写的代码，
+以及由这些代码生成的样例与测试数据，采用 MIT License，详见 LICENSE 文件。
+
+二、题面文字
+--------------------
+题目描述、输入输出格式等题面文字整理自开源仓库：
+
+    https://github.com/XUAHW/WHU-CS-KaoYan-Machine-Test
+
+该仓库目前未提供 LICENSE（GitHub 显示 license: null），题面文字的版权归原作者所有。
+本项目的 MIT License 不适用于题面文字，也不代表原作者授权。
+
+本仓库仅用于学习交流。如果原作者认为本仓库的转载不合适，请联系仓库维护者，
+我们会删除相关内容。
+
+三、第三方运行时
+--------------------
+项目本身不附带 Python、GCC、Node.js 等运行时；使用者需自行安装并遵守其许可证。

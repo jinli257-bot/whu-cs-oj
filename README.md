@@ -27,7 +27,13 @@ chmod +x run.sh
 python3 server.py --open
 ```
 
-启动后访问 <http://127.0.0.1:8765>。停止服务按 `Ctrl+C`。
+也可以使用 Docker（镜像内已带 g++ / gcc / nodejs）：
+
+```bash
+docker compose up -d --build
+```
+
+启动后访问 <http://127.0.0.1:8765>。停止服务按 `Ctrl+C`（Docker 用 `docker compose down`）。
 
 也可以手动指定端口：
 
@@ -146,10 +152,11 @@ whu-oj/
 
 ## 安全说明
 
-这是一个**本地** OJ：它会编译并运行你提交的代码。默认只监听 `127.0.0.1`，请不要把服务暴露到公网，也不要在不受信任的环境中使用。
+这是一个**本地** OJ：它会编译并运行你提交的代码。默认只监听 `127.0.0.1`，请不要把服务暴露到公网，也不要在不受信任的环境中使用。部署到公网前请阅读 [docs/deploy.md](docs/deploy.md)。
 
 ## 许可与致谢
 
-- 题面与题目来源：[XUAHW/WHU-CS-KaoYan-Machine-Test](https://github.com/XUAHW/WHU-CS-KaoYan-Machine-Test)。
+- **代码**（`server.py`、`judge.py`、`build.py`、`content/`、`web/`、`tools/` 等）采用 **MIT License**，见 [LICENSE](LICENSE)。
+- **题面文字**整理自 [XUAHW/WHU-CS-KaoYan-Machine-Test](https://github.com/XUAHW/WHU-CS-KaoYan-Machine-Test)，版权归原作者所有，**不在 MIT 许可范围内**；原仓库目前未提供 LICENSE。详见 [NOTICE](NOTICE)。
 - 样例、隐藏数据、评测系统与前端为本项目实现，仅用于学习交流。
-- 如果题面涉及版权问题，请联系原仓库作者。
+- 如果原作者认为转载不合适，请联系维护者删除相关内容。
