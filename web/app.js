@@ -392,7 +392,7 @@
         <textarea id="customInput" placeholder="在这里粘贴自定义输入…"></textarea>
       </details>
       <div class="wb-foot">
-        <span class="hint">Ctrl + Enter 提交</span>
+        <span class="hint" title="Tab 缩进 / Shift+Tab 反缩进 · 自动补全括号与引号 · Ctrl+/ 注释 · Ctrl+Enter 提交">Tab 缩进 · 自动补全 · Ctrl+Enter 提交</span>
         <span class="spacer"></span>
         <button class="btn btn-run" id="runBtn">运行</button>
         <button class="btn btn-submit" id="submitBtn">提交评测</button>
@@ -401,6 +401,220 @@
         <div class="result-empty">运行或提交后，结果会显示在这里。</div>
       </div>
     </section>`;
+  }
+
+  const OPEN_TO_CLOSE = { "(": ")", "[": "]", "{": "}", '"': '"', "'": "'", "`": "`" };
+  const CLOSE_TO_OPEN = { ")": "(", "]": "[", "}": "{", '"': '"', "'": "'", "`": "`" };
+
+  function isWordChar(ch) {
+    return !!ch && /[A-Za-z0-9_$]/.test(ch);
+  }
+
+  function insertEditorText(ta, text, selStart, selEnd) {
+    ta.focus();
+    const start = ta.selectionStart, end = ta.selectionEnd;
+    let ok = false;
+    try { ok = document.execCommand("insertText", false, text); } catch { ok = false; }
+    if (!ok) ta.setRangeText(text, start, end, "end");
+    if (typeof selStart === "number") ta.setSelectionRange(selStart, selEnd == null ? selStart : selEnd);
+  }
+
+  function deleteEditorRange(ta, start, end) {
+    ta.setSelectionRange(start, end);
+    let ok = false;
+    try { ok = document.execCommand("delete"); } catch { ok = false; }
+    if (!ok) ta.setRangeText("", start, end, "end");
+  }
+
+  function canAutoCloseAfter(ch) {
+    return !ch || /[\s)\]},;:]/.test(ch);
+  }
+
+  function handleOpenChar(ta, key) {
+    const v = ta.value;
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    const next = v[s] || "", prev = v[s - 1] || "";
+    const close = OPEN_TO_CLOSE[key];
+
+    if (s !== e) {
+      const selected = v.slice(s, e);
+      insertEditorText(ta, key + selected + close, s + 1, s + 1 + selected.length);
+      return true;
+    }
+    if (key === '"' || key === "'" || key === "`") {
+      if (next === key) {
+        ta.setSelectionRange(s + 1, s + 1);
+        return true;
+      }
+      if (key !== "`" && isWordChar(prev)) return false;
+    }
+    if (next === close) {
+      insertEditorText(ta, key, s + 1, s + 1);
+      return true;
+    }
+    if (!canAutoCloseAfter(next)) return false;
+    insertEditorText(ta, key + close, s + 1, s + 1);
+    return true;
+  }
+
+  function handleEnter(ta) {
+    const v = ta.value;
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    if (s !== e) return false;
+
+    const lineStart = v.lastIndexOf("\n", s - 1) + 1;
+    const line = v.slice(lineStart, s);
+    const indent = (line.match(/^[ \t]*/) || [""])[0];
+    const prev = v[s - 1] || "", next = v[s] || "";
+    const close = OPEN_TO_CLOSE[prev];
+
+    if (close && next === close) {
+      const text = "\n" + indent + "    \n" + indent;
+      insertEditorText(ta, text, s + 1 + indent.length + 4, s + 1 + indent.length + 4);
+      return true;
+    }
+    const trimmed = line.replace(/[ \t]+$/, "");
+    if (/[{\[(]$/.test(trimmed) || trimmed.endsWith(":")) {
+      insertEditorText(ta, "\n" + indent + "    ");
+      return true;
+    }
+    if (indent) {
+      insertEditorText(ta, "\n" + indent);
+      return true;
+    }
+    return false;
+  }
+
+  function handleBackspace(ta) {
+    const v = ta.value;
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    if (s !== e || s === 0) return false;
+    if (OPEN_TO_CLOSE[v[s - 1]] === v[s]) {
+      deleteEditorRange(ta, s - 1, s + 1);
+      return true;
+    }
+    return false;
+  }
+
+  function applyTab(ta, shift) {
+    const v = ta.value;
+    const s = ta.selectionStart, e = ta.selectionEnd;
+
+    if (s === e) {
+      if (!shift) {
+        const lineStart = v.lastIndexOf("\n", s - 1) + 1;
+        const n = 4 - ((s - lineStart) % 4);
+        insertEditorText(ta, " ".repeat(n));
+        return true;
+      }
+      const lineStart = v.lastIndexOf("\n", s - 1) + 1;
+      const before = v.slice(lineStart, s);
+      const m = before.match(/ {1,4}$/);
+      if (!m) return false;
+      deleteEditorRange(ta, s - m[0].length, s);
+      return true;
+    }
+
+    const blockStart = v.lastIndexOf("\n", s - 1) + 1;
+    let blockEnd = e;
+    if (blockEnd > blockStart && v[blockEnd - 1] === "\n") blockEnd--;
+    const block = v.slice(blockStart, blockEnd);
+    if (!block) return false;
+
+    const lines = block.split("\n");
+    const newLines = shift
+      ? lines.map((l) => l.replace(/^ {1,4}/, ""))
+      : lines.map((l) => "    " + l);
+    const newBlock = newLines.join("\n");
+    if (newBlock === block) return false;
+    ta.focus();
+    ta.setSelectionRange(blockStart, blockEnd);
+    insertEditorText(ta, newBlock, blockStart, blockStart + newBlock.length);
+    return true;
+  }
+
+  function toggleLineComment(ta, lang) {
+    const v = ta.value;
+    const s = ta.selectionStart, e = ta.selectionEnd;
+    const start = v.lastIndexOf("\n", s - 1) + 1;
+    let end = v.indexOf("\n", e);
+    if (end < 0) end = v.length;
+    const block = v.slice(start, end);
+    const lines = block.split("\n");
+    if (!lines.some((l) => l.trim())) return false;
+
+    const marker = lang === "python" ? "#" : "//";
+    const re = new RegExp("^" + marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " ?");
+    const nonEmpty = lines.filter((l) => l.trim());
+    const all = nonEmpty.every((l) => re.test(l.trimStart()));
+    const out = lines.map((l) => {
+      if (!l.trim()) return l;
+      const indent = (l.match(/^[ \t]*/) || [""])[0];
+      const rest = l.slice(indent.length);
+      if (all) return indent + rest.replace(re, "");
+      return indent + marker + " " + rest;
+    });
+    const newBlock = out.join("\n");
+    if (newBlock === block) return false;
+    ta.focus();
+    ta.setSelectionRange(start, end);
+    insertEditorText(ta, newBlock, start, start + newBlock.length);
+    return true;
+  }
+
+  function handleEditorKey(e, ta, lang, afterEdit) {
+    if (e.isComposing || e.keyCode === 229) return false;
+    const mod = e.ctrlKey || e.metaKey;
+
+    if (mod && e.key === "Enter") {
+      e.preventDefault();
+      submit();
+      return true;
+    }
+    if (mod && e.key === "/") {
+      e.preventDefault();
+      if (toggleLineComment(ta, lang)) afterEdit();
+      return true;
+    }
+    if (mod || e.altKey) return false;
+
+    if (e.key === "Tab") {
+      e.preventDefault();
+      if (applyTab(ta, e.shiftKey)) afterEdit();
+      return true;
+    }
+    if (e.key === "Enter") {
+      if (handleEnter(ta)) {
+        e.preventDefault();
+        afterEdit();
+      }
+      return false;
+    }
+    if (e.key === "Backspace") {
+      if (handleBackspace(ta)) {
+        e.preventDefault();
+        afterEdit();
+      }
+      return false;
+    }
+    if (e.key.length !== 1) return false;
+
+    const key = e.key;
+    if (OPEN_TO_CLOSE[key]) {
+      if (handleOpenChar(ta, key)) {
+        e.preventDefault();
+        afterEdit();
+      }
+      return false;
+    }
+    if (CLOSE_TO_OPEN[key]) {
+      const s = ta.selectionStart, en = ta.selectionEnd;
+      if (s === en && ta.value[s] === key) {
+        e.preventDefault();
+        ta.setSelectionRange(s + 1, s + 1);
+      }
+    }
+    return false;
   }
 
   function initWorkbench(prob) {
@@ -434,28 +648,17 @@
 
     setCode(store.get(key(state.lang), template(state.lang)));
 
-    ta.addEventListener("input", () => {
+    const afterEdit = () => {
       paint();
       store.set(key(state.lang), ta.value);
-    });
+    };
+    ta.addEventListener("input", afterEdit);
     ta.addEventListener("scroll", () => {
       pre.scrollTop = ta.scrollTop;
       pre.scrollLeft = ta.scrollLeft;
       gutter.scrollTop = ta.scrollTop;
     });
-    ta.addEventListener("keydown", (e) => {
-      if (e.key === "Tab") {
-        e.preventDefault();
-        const s = ta.selectionStart, en = ta.selectionEnd;
-        ta.value = ta.value.slice(0, s) + "    " + ta.value.slice(en);
-        ta.selectionStart = ta.selectionEnd = s + 4;
-        paint();
-      }
-      if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
-        e.preventDefault();
-        submit();
-      }
-    });
+    ta.addEventListener("keydown", (e) => handleEditorKey(e, ta, state.lang, afterEdit));
     langSel.addEventListener("change", () => {
       store.set(key(state.lang), ta.value);
       state.lang = langSel.value;
