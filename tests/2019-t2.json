@@ -1,0 +1,1 @@
+{"id": "2019-t2", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "{[()]}\n", "output": "合法\n"}, {"input": "{[(])}\n", "output": "{[]}\n"}, {"input": "([)]\n", "output": "()\n"}, {"input": "(((\n", "output": "\n"}, {"input": ")))\n", "output": "\n"}, {"input": "()[]{}\n", "output": "合法\n"}, {"input": "(]\n", "output": "\n"}]}

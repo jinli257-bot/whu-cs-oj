@@ -1,0 +1,1 @@
+{"id": "2014-t3", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "", "output": "6 28 496\n"}]}

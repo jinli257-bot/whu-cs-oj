@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+work/
+server.out.log
+server.err.log
+data/submissions.jsonl
+shots/
+.DS_Store
+Thumbs.db

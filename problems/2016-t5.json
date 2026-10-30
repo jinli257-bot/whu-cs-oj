@@ -1,0 +1,26 @@
+{
+ "id": "2016-t5",
+ "year": 2016,
+ "index": 5,
+ "title": "象限函数计算",
+ "tags": [
+  "模拟"
+ ],
+ "difficulty": 1,
+ "type": "program",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "输入坐标点 (x, y) 的值，根据该点所在的象限，按以下公式计算并显示 z 的值。\n\n```\n第一、二象限（y > 0）：  z = √|x| / (5 + 2y)\n第三象限（x < 0, y < 0）：z = sin 35° − 6x + y²\n第四象限（x > 0, y < 0）：z = yˣ − 2\n```\n\n**输入格式**\n\n输入两个非零整数 x 和 y（|x|, |y| ≤ 20），中间用空格隔开。\n\n**输出格式**\n\n输出一个实数 z，保留小数点后 2 位。\n",
+ "samples": [
+  {
+   "input": "4 2\n",
+   "output": "0.22\n"
+  },
+  {
+   "input": "-2 -3\n",
+   "output": "21.57\n"
+  }
+ ],
+ "checker": "float",
+ "tol": 0.005
+}

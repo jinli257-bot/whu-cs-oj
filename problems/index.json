@@ -1,0 +1,681 @@
+{
+ "title": "珞珈机试 OJ",
+ "subtitle": "武汉大学计算机学院考研复试机试真题 2014–2025",
+ "years": [
+  {
+   "year": 2014,
+   "problems": [
+    "2014-t1",
+    "2014-t2",
+    "2014-t3",
+    "2014-t4",
+    "2014-t5"
+   ]
+  },
+  {
+   "year": 2015,
+   "problems": [
+    "2015-t1",
+    "2015-t2",
+    "2015-t3",
+    "2015-t4",
+    "2015-t5"
+   ]
+  },
+  {
+   "year": 2016,
+   "problems": [
+    "2016-t1",
+    "2016-t2",
+    "2016-t3",
+    "2016-t4",
+    "2016-t5"
+   ]
+  },
+  {
+   "year": 2017,
+   "problems": [
+    "2017-t1",
+    "2017-t2",
+    "2017-t3",
+    "2017-t4",
+    "2017-t5"
+   ]
+  },
+  {
+   "year": 2018,
+   "problems": [
+    "2018-t1",
+    "2018-t2",
+    "2018-t3",
+    "2018-t4",
+    "2018-t5"
+   ]
+  },
+  {
+   "year": 2019,
+   "problems": [
+    "2019-t1",
+    "2019-t2",
+    "2019-t3",
+    "2019-t4"
+   ]
+  },
+  {
+   "year": 2020,
+   "problems": [
+    "2020-t1",
+    "2020-t2",
+    "2020-t3"
+   ]
+  },
+  {
+   "year": 2021,
+   "problems": [
+    "2021-t1",
+    "2021-t2",
+    "2021-t3",
+    "2021-t4",
+    "2021-t5"
+   ]
+  },
+  {
+   "year": 2022,
+   "problems": [
+    "2022-t1",
+    "2022-t2"
+   ]
+  },
+  {
+   "year": 2023,
+   "problems": [
+    "2023-t1",
+    "2023-t2",
+    "2023-t3"
+   ]
+  },
+  {
+   "year": 2024,
+   "problems": [
+    "2024-t1",
+    "2024-t2",
+    "2024-t3"
+   ]
+  },
+  {
+   "year": 2025,
+   "problems": [
+    "2025-t1",
+    "2025-t2",
+    "2025-t3",
+    "2025-t4",
+    "2025-t5",
+    "2025-t6"
+   ]
+  }
+ ],
+ "problems": [
+  {
+   "id": "2014-t1",
+   "year": 2014,
+   "index": 1,
+   "title": "分段函数求值",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2014-t2",
+   "year": 2014,
+   "index": 2,
+   "title": "字符串字符排序",
+   "tags": [
+    "字符串处理"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2014-t3",
+   "year": 2014,
+   "index": 3,
+   "title": "寻找完数",
+   "tags": [
+    "暴力枚举"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2014-t4",
+   "year": 2014,
+   "index": 4,
+   "title": "N阶魔方阵构造",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2014-t5",
+   "year": 2014,
+   "index": 5,
+   "title": "硬币凑数",
+   "tags": [
+    "递归"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2015-t1",
+   "year": 2015,
+   "index": 1,
+   "title": "数字与星号",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2015-t2",
+   "year": 2015,
+   "index": 2,
+   "title": "斐波那契数列中的质数",
+   "tags": [
+    "暴力枚举"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2015-t3",
+   "year": 2015,
+   "index": 3,
+   "title": "摸球组合问题",
+   "tags": [
+    "暴力枚举"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2015-t4",
+   "year": 2015,
+   "index": 4,
+   "title": "整数分解",
+   "tags": [
+    "回溯",
+    "递归"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  },
+  {
+   "id": "2015-t5",
+   "year": 2015,
+   "index": 5,
+   "title": "IP地址进制转换",
+   "tags": [
+    "字符串处理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2016-t1",
+   "year": 2016,
+   "index": 1,
+   "title": "分解质因数",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2016-t2",
+   "year": 2016,
+   "index": 2,
+   "title": "倒杨辉三角",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2016-t3",
+   "year": 2016,
+   "index": 3,
+   "title": "放苹果",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  },
+  {
+   "id": "2016-t4",
+   "year": 2016,
+   "index": 4,
+   "title": "货币格式化",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2016-t5",
+   "year": 2016,
+   "index": 5,
+   "title": "象限函数计算",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2017-t1",
+   "year": 2017,
+   "index": 1,
+   "title": "猴子吃桃",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2017-t2",
+   "year": 2017,
+   "index": 2,
+   "title": "兔子繁衍",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2017-t3",
+   "year": 2017,
+   "index": 3,
+   "title": "正整数分解质因数",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2017-t4",
+   "year": 2017,
+   "index": 4,
+   "title": "统计与定位",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2017-t5",
+   "year": 2017,
+   "index": 5,
+   "title": "最小不重复数",
+   "tags": [
+    "贪心"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2018-t1",
+   "year": 2018,
+   "index": 1,
+   "title": "区间数码统计",
+   "tags": [
+    "数位DP"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  },
+  {
+   "id": "2018-t2",
+   "year": 2018,
+   "index": 2,
+   "title": "连续数字三角形",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2018-t3",
+   "year": 2018,
+   "index": 3,
+   "title": "回文质数",
+   "tags": [
+    "枚举优化"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2018-t4",
+   "year": 2018,
+   "index": 4,
+   "title": "方阵变换",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2018-t5",
+   "year": 2018,
+   "index": 5,
+   "title": "字符串大数加法",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2019-t1",
+   "year": 2019,
+   "index": 1,
+   "title": "最少硬币找零",
+   "tags": [
+    "贪心"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2019-t2",
+   "year": 2019,
+   "index": 2,
+   "title": "括号匹配与修正",
+   "tags": [
+    "栈"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2019-t3",
+   "year": 2019,
+   "index": 3,
+   "title": "最大连续子序列和",
+   "tags": [
+    "分治"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2019-t4",
+   "year": 2019,
+   "index": 4,
+   "title": "任务最佳调度",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2020-t1",
+   "year": 2020,
+   "index": 1,
+   "title": "提取首个整数",
+   "tags": [
+    "字符串"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2020-t2",
+   "year": 2020,
+   "index": 2,
+   "title": "简答题",
+   "tags": [
+    "简答题"
+   ],
+   "difficulty": 1,
+   "type": "essay"
+  },
+  {
+   "id": "2020-t3",
+   "year": 2020,
+   "index": 3,
+   "title": "设计题",
+   "tags": [
+    "设计题"
+   ],
+   "difficulty": 1,
+   "type": "essay"
+  },
+  {
+   "id": "2021-t1",
+   "year": 2021,
+   "index": 1,
+   "title": "整数去重",
+   "tags": [
+    "哈希"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2021-t2",
+   "year": 2021,
+   "index": 2,
+   "title": "矩阵平滑处理",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2021-t3",
+   "year": 2021,
+   "index": 3,
+   "title": "乒乓球比赛名单",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2021-t4",
+   "year": 2021,
+   "index": 4,
+   "title": "寻找黑洞数",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2021-t5",
+   "year": 2021,
+   "index": 5,
+   "title": "埃拉托斯特尼筛法",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2022-t1",
+   "year": 2022,
+   "index": 1,
+   "title": "潜在基因判断",
+   "tags": [
+    "字符串"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2022-t2",
+   "year": 2022,
+   "index": 2,
+   "title": "基于相似用户的歌曲推荐系统",
+   "tags": [
+    "字符串"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2023-t1",
+   "year": 2023,
+   "index": 1,
+   "title": "快速两数之和",
+   "tags": [
+    "哈希"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2023-t2",
+   "year": 2023,
+   "index": 2,
+   "title": "最大连续子序列和",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2023-t3",
+   "year": 2023,
+   "index": 3,
+   "title": "机器人路径模拟",
+   "tags": [
+    "模拟"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2024-t1",
+   "year": 2024,
+   "index": 1,
+   "title": "买卖股票的最佳时机",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 1,
+   "type": "program"
+  },
+  {
+   "id": "2024-t2",
+   "year": 2024,
+   "index": 2,
+   "title": "三数之和",
+   "tags": [
+    "双指针"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2024-t3",
+   "year": 2024,
+   "index": 3,
+   "title": "解密数字",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2025-t1",
+   "year": 2025,
+   "index": 1,
+   "title": "单点修改与区间最大值",
+   "tags": [
+    "线段树"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  },
+  {
+   "id": "2025-t2",
+   "year": 2025,
+   "index": 2,
+   "title": "棋盘最小覆盖",
+   "tags": [
+    "DFS"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  },
+  {
+   "id": "2025-t3",
+   "year": 2025,
+   "index": 3,
+   "title": "定点单向通行最短路",
+   "tags": [
+    "Dijkstra"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2025-t4",
+   "year": 2025,
+   "index": 4,
+   "title": "星球引力旅行",
+   "tags": [
+    "Dijkstra"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2025-t5",
+   "year": 2025,
+   "index": 5,
+   "title": "连通性逻辑校验",
+   "tags": [
+    "并查集"
+   ],
+   "difficulty": 2,
+   "type": "program"
+  },
+  {
+   "id": "2025-t6",
+   "year": 2025,
+   "index": 6,
+   "title": "工作最大收益",
+   "tags": [
+    "动态规划"
+   ],
+   "difficulty": 3,
+   "type": "program"
+  }
+ ]
+}

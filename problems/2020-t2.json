@@ -1,0 +1,16 @@
+{
+ "id": "2020-t2",
+ "year": 2020,
+ "index": 2,
+ "title": "简答题",
+ "tags": [
+  "简答题"
+ ],
+ "difficulty": 1,
+ "type": "essay",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "请写出什么是\"迭代算法”、“递归算法\"、“贪心算法\"和“枚举算法”，并描述其特点。\n",
+ "samples": [],
+ "checker": "tokens"
+}

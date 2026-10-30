@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>珞珈机试 OJ · WHU CS 考研机试</title>
+<link rel="stylesheet" href="/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f1f1c'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%237fe0c3' font-family='serif'>珞</text></svg>" />
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="菜单">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <a class="brand" href="#/">
+    <span class="brand-mark">珞</span>
+    <span class="brand-text">
+      <span class="brand-name">珞珈机试</span>
+      <span class="brand-sub">WHU CS · 考研复试机试 OJ</span>
+    </span>
+  </a>
+  <div class="top-actions">
+    <div class="top-stat" id="topStat"></div>
+    <button class="user-chip" id="userBtn" title="设置昵称">
+      <span class="user-dot"></span><span id="userName">游客</span>
+    </button>
+  </div>
+</header>
+
+<aside class="sidebar" id="sidebar">
+  <div class="side-search">
+    <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="searchInput" type="search" placeholder="搜索题号 / 标题 / 标签" autocomplete="off" />
+  </div>
+  <nav id="problemNav" class="problem-nav"></nav>
+  <div class="side-foot">
+    <a href="#/about">关于本 OJ</a>
+    <span>2014 – 2025 · 真题整理</span>
+  </div>
+</aside>
+<div class="sidebar-mask" id="sidebarMask"></div>
+
+<main class="main" id="main"></main>
+<div class="toast" id="toast"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

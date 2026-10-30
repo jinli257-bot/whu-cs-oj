@@ -1,0 +1,21 @@
+{
+ "id": "2024-t2",
+ "year": 2024,
+ "index": 2,
+ "title": "三数之和",
+ "tags": [
+  "双指针"
+ ],
+ "difficulty": 2,
+ "type": "program",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "给你一个整数数组 nums ，判断是否存在三元组 `[nums[i], nums[j], nums[k]]` 满足` i != j`、`i != k` 且 `j != k` ，同时还满足 `nums[i] + nums[j] + nums[k] == 0 `。请你返回所有和为 0 且不重复的三元组。\n\n**要求：**\n* 写出o(n^3)与o(n^2)对应两个程序，共40分\n* 答案中不可以包含重复的三元组。\n\n**输入格式:**\n\n* 第一行: 输入N，代表数组长度\n* 第二行: 输入N个数，对应nums的具体值\n\n**输出格式:**\n\n* 输出一行: [[a,b,c], ..., [d,e,f]]\n",
+ "samples": [
+  {
+   "input": "6\n-1 0 1 2 -1 -4\n",
+   "output": "[[-1,-1,2],[-1,0,1]]\n"
+  }
+ ],
+ "checker": "nowhitespace"
+}

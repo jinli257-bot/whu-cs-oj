@@ -1,0 +1,1 @@
+{"id": "2020-t1", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "Ab123xyz874[429]2\n", "output": "123\n"}, {"input": "...007bond\n", "output": "7\n"}, {"input": "abc\n", "output": "0\n"}, {"input": "a1b2c3\n", "output": "1\n"}, {"input": "0000\n", "output": "0\n"}, {"input": "x99\n", "output": "99\n"}, {"input": "  42  \n", "output": "42\n"}]}

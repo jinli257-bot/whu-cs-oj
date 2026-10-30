@@ -1,0 +1,26 @@
+{
+ "id": "2014-t1",
+ "year": 2014,
+ "index": 1,
+ "title": "分段函数求值",
+ "tags": [
+  "模拟"
+ ],
+ "difficulty": 1,
+ "type": "program",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "编写程序，计算下列分段函数 **y = f(x)** 的值。\n\n```\n当 x > 0 时：  y = (√x + eˣ) / (5x + 5)\n当 x ≤ 0 时：  y = (2/3 + sin 60°) × |x|\n```\n\n**输入格式**\n\n输入一个实数 x。\n\n**输出格式**\n\n输出一个实数 y，保留小数点后 4 位（四舍五入）。\n",
+ "samples": [
+  {
+   "input": "1\n",
+   "output": "0.3718\n"
+  },
+  {
+   "input": "-2\n",
+   "output": "3.0654\n"
+  }
+ ],
+ "checker": "float",
+ "tol": 5e-05
+}

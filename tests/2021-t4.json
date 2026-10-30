@@ -1,0 +1,1 @@
+{"id": "2021-t4", "checker": "tokens", "tol": null, "timeLimit": 4.0, "tests": [{"input": "3\n", "output": "495\n"}, {"input": "4\n", "output": "6174\n"}, {"input": "2\n", "output": ""}, {"input": "5\n", "output": ""}, {"input": "6\n", "output": "549945\n631764\n"}]}

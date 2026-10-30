@@ -1,0 +1,1 @@
+{"id": "2021-t3", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "", "output": "a=z\nb=x\nc=y\n"}]}

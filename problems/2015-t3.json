@@ -1,0 +1,21 @@
+{
+ "id": "2015-t3",
+ "year": 2015,
+ "index": 3,
+ "title": "摸球组合问题",
+ "tags": [
+  "暴力枚举"
+ ],
+ "difficulty": 1,
+ "type": "program",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "有一个袋子，里面装有2个红球，3个绿球，5个黄球。现在从袋子中随机摸出 8 个球。 请编写程序，计算并打印出所有可能的颜色组合。\n\n**输入格式:**\n\n* 无（本题为固定范围计算，不需要从键盘读取输入）\n\n**输出格式:**\n\n* 每行输出一种组合方案，格式为： `Red: [红球数], Green: [绿球数], Yellow: [黄球数]`\n",
+ "samples": [
+  {
+   "input": "",
+   "output": "Red: 0, Green: 3, Yellow: 5\nRed: 1, Green: 2, Yellow: 5\nRed: 1, Green: 3, Yellow: 4\nRed: 2, Green: 1, Yellow: 5\nRed: 2, Green: 2, Yellow: 4\nRed: 2, Green: 3, Yellow: 3\n"
+  }
+ ],
+ "checker": "tokens"
+}

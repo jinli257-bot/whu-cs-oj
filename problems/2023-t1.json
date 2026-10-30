@@ -1,0 +1,25 @@
+{
+ "id": "2023-t1",
+ "year": 2023,
+ "index": 1,
+ "title": "快速两数之和",
+ "tags": [
+  "哈希"
+ ],
+ "difficulty": 2,
+ "type": "program",
+ "timeLimit": 2.0,
+ "memoryLimit": 256,
+ "statement": "给定 n 个整数和一个目标值 x，判断是否存在两个数 a, b（下标不同），使得 a + b = x。\n\n若存在，输出这两个数（顺序不限，任意一组均可）；若不存在，输出 `error`。\n\n要求算法时间复杂度优于 O(n²)。\n\n**输入格式**\n\n- 第一行一个整数 n（1 ≤ n ≤ 10⁵）。\n- 第二行 n 个整数。\n- 第三行一个整数 x。\n\n**输出格式**\n\n若存在解，输出两个整数，用空格隔开；否则输出 `error`。\n",
+ "samples": [
+  {
+   "input": "5\n2 7 11 15 3\n9\n",
+   "output": "2 7\n"
+  },
+  {
+   "input": "3\n1 2 3\n7\n",
+   "output": "error\n"
+  }
+ ],
+ "checker": "twosum"
+}

@@ -1,0 +1,25 @@
+{
+ "id": "2021-t4",
+ "year": 2021,
+ "index": 4,
+ "title": "寻找黑洞数",
+ "tags": [
+  "模拟"
+ ],
+ "difficulty": 2,
+ "type": "program",
+ "timeLimit": 4.0,
+ "memoryLimit": 256,
+ "statement": "黑洞数（卡普雷卡常数）是指满足以下条件的整数：由这个数每位上的数字组成的最大数减去最小数，仍然等于这个数本身。\n\n```\nSortDesc(digits) − SortAsc(digits) = OriginalNumber\n```\n\n例如 3 位黑洞数是 495：954 − 459 = 495。\n\n请根据输入的位数 n，在 n 位数的范围内查找并显示所有黑洞数。\n\n**输入格式**\n\n输入一个正整数 n（1 ≤ n ≤ 6）。\n\n**输出格式**\n\n按从小到大的顺序输出该位数下所有黑洞数，每行一个。若不存在则不要输出任何内容。\n",
+ "samples": [
+  {
+   "input": "3\n",
+   "output": "495\n"
+  },
+  {
+   "input": "4\n",
+   "output": "6174\n"
+  }
+ ],
+ "checker": "tokens"
+}

@@ -1,0 +1,1 @@
+{"id": "2015-t3", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "", "output": "Red: 0, Green: 3, Yellow: 5\nRed: 1, Green: 2, Yellow: 5\nRed: 1, Green: 3, Yellow: 4\nRed: 2, Green: 1, Yellow: 5\nRed: 2, Green: 2, Yellow: 4\nRed: 2, Green: 3, Yellow: 3\n"}]}

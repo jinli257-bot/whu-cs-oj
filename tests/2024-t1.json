@@ -1,0 +1,1 @@
+{"id": "2024-t1", "checker": "tokens", "tol": null, "timeLimit": 2.0, "tests": [{"input": "6\n7 1 5 3 6 4\n", "output": "5\n"}, {"input": "1\n5\n", "output": "0\n"}, {"input": "5\n7 6 4 3 1\n", "output": "0\n"}, {"input": "2\n2 4\n", "output": "2\n"}, {"input": "8\n3 3 5 0 0 3 1 4\n", "output": "4\n"}]}
