@@ -10,6 +10,8 @@
 
 ![题目与评测](docs/problem.png)
 
+> 最新版下载：[GitHub Releases](https://github.com/jinli257-bot/whu-cs-oj/releases)
+
 ## 快速开始
 
 环境要求：**Python 3.10+**（零第三方依赖）。C / C++ / JavaScript 为可选项。
